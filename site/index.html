@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="按课程查找 PDF 资料。部分资料需申请访问。">
-  <title>课程资料库</title>
+  <meta name="description" content="哈工大人工智能课程资料库，按本科生和研究生课程查找试题、讲义与项目资料。">
+  <meta name="theme-color" content="#153a32">
+  <title>哈工大人工智能课程资料库</title>
   <link rel="stylesheet" href="./styles.css">
   <script defer src="./search.js"></script>
 </head>
@@ -12,66 +13,66 @@
   <a class="skip-link" href="#materials">跳到资料目录</a>
   <header class="site-header">
     <div class="shell header-inner">
-      <a class="brand" href="#top">
-        <span class="brand-mark" aria-hidden="true"></span>
-        课程资料库
+      <a class="brand" href="#top" aria-label="HIT AI 课程资料库，返回顶部">
+        <span class="brand-mark" aria-hidden="true">AI</span>
+        <span>HIT AI</span>
       </a>
-      <a class="header-link" href="#materials">资料目录<span aria-hidden="true">↘</span></a>
+      <nav class="header-actions" aria-label="站点导航">
+        <a class="contents-link" href="#materials">资料目录</a>
+        <a class="star-link" href="https://github.com/zhuguangdao/HIT-AI_Class" target="_blank" rel="noopener noreferrer" aria-label="前往 GitHub 给 HIT-AI_Class 点 Star（新标签页）">
+          <span aria-hidden="true">☆</span> GitHub Star <span class="external" aria-hidden="true">↗</span>
+        </a>
+      </nav>
     </div>
   </header>
 
   <main class="shell">
     <section class="hero" aria-labelledby="site-title">
-      <div class="hero-content">
+      <div class="hero-copy">
+        <p class="hero-school">哈尔滨工业大学 · 人工智能</p>
         <h1 id="site-title">课程资料库</h1>
-        <p>按课程查找、预览和下载 PDF 资料。</p>
+        <p class="hero-description">汇集课程试题、回忆资料与项目文件。</p>
+        <dl class="hero-stats">
+          <div><dt>门课程</dt><dd><!-- COURSE_TOTAL --></dd></div>
+          <div><dt>份资料</dt><dd><!-- TOTAL --></dd></div>
+        </dl>
       </div>
-      <div class="paper-stack" aria-hidden="true">
-        <div class="paper paper-back"></div>
-        <div class="paper paper-front">
-          <span class="paper-line paper-heading"></span>
-          <span class="paper-line"></span>
-          <span class="paper-line"></span>
-          <span class="paper-line paper-short"></span>
-        </div>
+      <div class="hero-graphic" aria-hidden="true">
+        <div class="hero-orbit orbit-outer"></div>
+        <div class="hero-orbit orbit-middle"></div>
+        <div class="hero-orbit orbit-inner"></div>
+        <div class="orbit-center"></div>
+        <div class="orbit-node node-top"></div>
+        <div class="orbit-node node-bottom"></div>
+        <div class="orbit-node node-right"></div>
       </div>
     </section>
 
-    <div class="library">
-      <nav class="sidebar" aria-labelledby="category-title">
-        <h2 id="category-title">课程分类</h2>
-        <p class="category-empty" <!-- NAVIGATION_EMPTY -->>暂无分类</p>
-        <ul class="category-list" <!-- NAVIGATION_STATE -->>
+    <section class="materials" id="materials" aria-labelledby="materials-title">
+      <header class="materials-header">
+        <div>
+          <h2 id="materials-title">资料目录</h2>
+          <p class="results-count" id="results-count" role="status">共 <!-- TOTAL --> 份资料</p>
+        </div>
+        <div class="search" <!-- SEARCH_STATE -->>
+          <label class="visually-hidden" for="search">搜索课程、文件名或格式</label>
+          <input id="search" type="search" placeholder="搜索课程、文件名或格式" autocomplete="off">
+        </div>
+      </header>
+
+      <div class="library">
+        <nav class="sidebar" aria-labelledby="category-title" <!-- NAVIGATION_STATE -->>
+          <h3 id="category-title">课程导航</h3>
           <!-- NAVIGATION -->
-        </ul>
-      </nav>
-
-      <section class="materials" id="materials" aria-labelledby="materials-title">
-        <div class="materials-header">
-          <div>
-            <h2 id="materials-title">资料目录</h2>
-            <p class="results-count" id="results-count" role="status">共 <!-- TOTAL --> 份 PDF</p>
-          </div>
-          <div class="search" <!-- SEARCH_STATE -->>
-            <label class="visually-hidden" for="search">搜索课程或文件名</label>
-            <input id="search" type="search" placeholder="搜索课程或文件名" autocomplete="off">
-          </div>
-        </div>
-
-        <p class="access-note" <!-- ACCESS_STATE -->><strong>受限资料需申请。</strong> 请登录飞书，在申请备注里说明用途。获批后，用同一账号打开原链接。未获批准时，资料保持关闭。</p>
-        <div class="empty-state" <!-- EMPTY_STATE -->>
-          <span class="document-icon" aria-hidden="true">PDF</span>
-          <div>
-            <h3>暂无资料</h3>
-            <p>上传的 PDF 会在这里显示。</p>
-          </div>
-        </div>
-        <p class="empty-state" id="no-results" hidden>没有找到匹配的资料。可以换一个关键词再试。</p>
-        <div id="catalog">
+        </nav>
+        <div class="catalog">
+          <p class="access-note" <!-- ACCESS_STATE -->><strong>受限资料需申请。</strong> 登录飞书，在申请备注里说明用途。获批后，用同一账号打开原链接。</p>
+          <p class="empty-state" <!-- EMPTY_STATE -->>暂无资料</p>
+          <p class="empty-state" id="no-results" hidden>没有找到匹配的资料。可以换一个关键词再试。</p>
           <!-- CATALOG -->
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   </main>
 </body>
 </html>
