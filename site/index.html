@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="按课程查找 PDF 资料。部分资料需申请访问。">
+  <title>课程资料库</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script defer src="./search.js"></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#materials">跳到资料目录</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="#top">
+        <span class="brand-mark" aria-hidden="true"></span>
+        课程资料库
+      </a>
+      <a class="header-link" href="#materials">资料目录<span aria-hidden="true">↘</span></a>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="hero" aria-labelledby="site-title">
+      <div class="hero-content">
+        <h1 id="site-title">课程资料库</h1>
+        <p>按课程查找、预览和下载 PDF 资料。</p>
+      </div>
+      <div class="paper-stack" aria-hidden="true">
+        <div class="paper paper-back"></div>
+        <div class="paper paper-front">
+          <span class="paper-line paper-heading"></span>
+          <span class="paper-line"></span>
+          <span class="paper-line"></span>
+          <span class="paper-line paper-short"></span>
+        </div>
+      </div>
+    </section>
+
+    <div class="library">
+      <nav class="sidebar" aria-labelledby="category-title">
+        <h2 id="category-title">课程分类</h2>
+        <p class="category-empty" <!-- NAVIGATION_EMPTY -->>暂无分类</p>
+        <ul class="category-list" <!-- NAVIGATION_STATE -->>
+          <!-- NAVIGATION -->
+        </ul>
+      </nav>
+
+      <section class="materials" id="materials" aria-labelledby="materials-title">
+        <div class="materials-header">
+          <div>
+            <h2 id="materials-title">资料目录</h2>
+            <p class="results-count" id="results-count" role="status">共 <!-- TOTAL --> 份 PDF</p>
+          </div>
+          <div class="search" <!-- SEARCH_STATE -->>
+            <label class="visually-hidden" for="search">搜索课程或文件名</label>
+            <input id="search" type="search" placeholder="搜索课程或文件名" autocomplete="off">
+          </div>
+        </div>
+
+        <p class="access-note" <!-- ACCESS_STATE -->><strong>受限资料需申请。</strong> 请登录飞书，在申请备注里说明用途。获批后，用同一账号打开原链接。未获批准时，资料保持关闭。</p>
+        <div class="empty-state" <!-- EMPTY_STATE -->>
+          <span class="document-icon" aria-hidden="true">PDF</span>
+          <div>
+            <h3>暂无资料</h3>
+            <p>上传的 PDF 会在这里显示。</p>
+          </div>
+        </div>
+        <p class="empty-state" id="no-results" hidden>没有找到匹配的资料。可以换一个关键词再试。</p>
+        <div id="catalog">
+          <!-- CATALOG -->
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
